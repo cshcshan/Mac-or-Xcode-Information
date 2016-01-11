@@ -1,0 +1,18 @@
+CI and ThirdParty
+
+Homebrew: Package管理工具
+CocoaPods: Package管理工具
+Carthage: Package管理工具
+
+xcodebuild: Xcode提供的build命令，可用於自動daily build
+
+Jenkins: CI
+
+Fabric: Crashlytics
+HockeyApp: app檢測工具-crash分析、beta版發佈並收集回饋
+cupertino: 可使用command下載Provision Profile
+Cobertura: 提供覆蓋率報告
+
+
+ImageMagick: 用於檢視、編輯位圖檔案以及進行圖像格式轉換的open source。它可以讀取、編輯超過100種圖象格式。
+Ghostscript: 是一套建基於Adobe、PostScript及可移植文件格式（PDF）的頁面描述語言等而編譯成的自由軟體。

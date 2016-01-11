@@ -1,0 +1,67 @@
+mac指令
+
+
+ls: 顯示目前資料夾內容(文件清單)
+ls /: 顯示根目錄內容 
+ls /Users/Han/Desktop: 列出桌面下清單
+ls -la: 列出目前資料夾內容
+
+dirname 路徑: 顯示該資料夾或檔案的父資料夾路徑
+basename 路徑: 顯示該資料夾或檔案名稱
+
+pwd: 顯示目前資料夾路徑
+
+顯示隱藏的資料夾和檔案
+defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder
+
+隱藏隱藏的資料夾和檔案
+defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder
+
+mkdir 資料夾路徑: 建立資料夾
+rmdir 資料夾路徑: 刪除資料夾
+
+cd 資料夾路徑: 轉換資料夾
+cp 來源檔案路徑 目的檔案路徑: 複製檔案
+mv 來源檔案路徑 目的資料夾路徑: 移動檔案
+rm 檔案路徑: 刪除檔案
+find 資料夾路徑 -name 要尋找的資料夾名稱 -type f
+
+nano 檔案路徑: 編輯文件
+Ctrl+O: 儲存
+Ctrl+X: 退出
+
+diff 文件路徑1 文件路徑2: 比對兩份文件差異
+diff3: 比對三份文件差異
+
+cat 文件路徑1 文件路徑2: 顯示文件路徑1和2的內容
+cat 文件路徑1 文件路徑2 > 文件路徑3: 串接文件路徑1和2的內容並輸出到文件路徑3
+
+nl 來源檔案路徑 > 輸出檔案路徑: 替文件檔案加上行數
+
+sh 腳本路徑: 執行腳本
+
+env: 顯示目前設定過的環境變數
+who: 顯示目前登錄的所有使用者
+whoami: 顯示目前正在操作的使用者
+tty: 顯示終端或偽終端名稱
+
+ps: 顯示目前處理程序(process)狀態
+ps u: 顯示目前處理程序(process)狀態
+
+date: 顯示目前電腦時間
+cal: 顯示當月月曆
+
+telnet ptt.cc: 網路通信
+
+history: 顯示執行過的所有指令
+
+clear: 清除終端機目前內容
+
+open -na Unity: 同時開啟多個Unity
+
+[補充]
+tab鍵可自動補齊指令:
+例如: 輸入cd /U後按下tab鍵，指令會自動補齊為cd /Users
+
+man 指令: 列出該指令的參數
+例如: man ls

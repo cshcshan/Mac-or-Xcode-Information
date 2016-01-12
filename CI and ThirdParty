@@ -16,3 +16,9 @@ Cobertura: 提供覆蓋率報告
 
 ImageMagick: 用於檢視、編輯位圖檔案以及進行圖像格式轉換的open source。它可以讀取、編輯超過100種圖象格式。
 Ghostscript: 是一套建基於Adobe、PostScript及可移植文件格式（PDF）的頁面描述語言等而編譯成的自由軟體。
+
+
+ThirdParty
+Reachability: 即時判斷網路連線狀態
+	http://aiur3908.blogspot.tw/2015/01/objective-c-reachability.html
+UIAlertView-Blocks: Alert action 使用 Block 處理按鈕事件

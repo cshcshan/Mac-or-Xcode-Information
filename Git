@@ -1,0 +1,21 @@
+Git
+
+Add Submodule...:
+
+Add/Link Subtree...: 
+
+Diff Against Current: 
+
+Rebase...: 將另一個分支異動的部分加到目前分支
+Rebase children of xxx interactively...:
+Archive...: 
+Branch...: 
+
+Reset xxx to this commit:
+Reverse Commit...: 
+Create Patch…:
+Cherry Pick: 將commit從A分支複製到B分支
+	例如: 在master做了兩次commit(y、z)後，發現不該在master修改，應該在自己分支commit時就可以使用
+		1. 在x建立新分支Han
+		2. 使用Cherry Pick將y、z複製給Han
+		3. 切回master將y、z commit刪了

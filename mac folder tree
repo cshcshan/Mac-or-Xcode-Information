@@ -1,0 +1,47 @@
+mac資料夾結構(底層是Unix系統)
+
+
+/bin	傳統 Unix 命令存放的資料夾，如ls, rm, mv
+/sbin	傳統 Unix 管理類的命令存放的資料夾，如fdisk, ifconfig
+/usr	第三方程式安裝的資料夾
+/usr/bin, /usr/sbin, /usr/lib
+		其中/usr/lib存放了共享庫(動態鏈結庫)
+/etc	標準 Unix 系統配置檔存放位置，如使用者密碼檔 /etc/passwd。
+		此資料夾實際指向 /private/etc
+/dev	設備檔案存放位置，如代表硬碟的 /dev/disk0
+/tmp	臨時檔案存放位置，其權限為所有人任意讀寫。
+		此資料夾實際指向 /private/tmp
+/var	存放經常變動的檔案，如日誌檔。
+		此資料夾實際指向 /private/var
+
+以下資料夾為標準 Unix 外 OS X 特有的：
+/Applications	預設所有GUI程式都安裝在這裡
+/Library		系統的數據檔、說明檔、文件等等
+/Netwrok		存放網路節點
+/System			只有一個Library資料夾，Library子資料夾存放系統大部份組件，如各種Framework、字型等檔案
+/Users			每個使用者有自己獨立資料夾
+/Volumes		存放文件系統掛載點
+/cores		
+/private		子資料夾存放/tmp, /var, /etc等鏈結資料夾的父資料夾
+
+資料來源：http://blog.csdn.net/smstong/article/details/15499661
+
+======================================================================
+
+系統完整保護是 OS X EI Capitan 的一項安全技術，只要是為了協助避免潛在惡意軟體修改 Mac 上受保護的檔案和資料夾。
+以前的 OS X 中，root 帳號沒有任何權限限制，所以可以存取 Mac 上任何系統資料夾或應用程式。
+系統完整保護將限制 root 帳號可執行的動作。
+
+由系統完整保護所保護的路徑和應用程式包含：
+/系統
+/usr
+/bin
+/sbin
+隨 OS X 預先安裝的 App
+
+第三方 app 和安裝程式可以寫入的路徑和應用程式包含：
+/應用程式
+/資源庫
+/usr/local
+
+資料來源：https://support.apple.com/zh-tw/HT204899

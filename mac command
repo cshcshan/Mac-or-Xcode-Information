@@ -3,6 +3,7 @@ mac指令
 
 ls: 顯示目前資料夾內容(文件清單)
 ls /: 顯示根目錄內容 
+ls -lO /: 顯示根目錄內容，包含權限
 ls /Users/Han/Desktop: 列出桌面下清單
 ls -la: 列出目前資料夾內容
 
@@ -65,6 +66,21 @@ tab鍵可自動補齊指令:
 
 man 指令: 列出該指令的參數
 例如: man ls
+
+======================================================================
+
+設定PATH環境變數
+
+1. touch ~/.bash_profile
+2. open ~/.bash_profile
+(上面兩行也可改成 touch ~/.bash_profile; open ~/.bash_profile)
+3. 在.bash_profile檔輸入
+	export PATH="/opt/vagrant/bin:$PATH"
+4. 存檔並關閉編輯器
+5. 讓系統去執行.bash_profile是路徑立即生效
+	source ~/.bash_profile
+6. 確認環境變數
+	echo $PATH
 
 ======================================================================
 

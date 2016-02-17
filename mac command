@@ -65,3 +65,11 @@ tab鍵可自動補齊指令:
 
 man 指令: 列出該指令的參數
 例如: man ls
+
+======================================================================
+
+使用 Homebrew Cask 機制安裝 VirtualBox + Vagrant
+
+$ brew cask install vagrant    --appdir=/Applications
+$ brew cask install virtualbox --appdir=/Applications
+

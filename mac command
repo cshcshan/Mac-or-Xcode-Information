@@ -89,3 +89,10 @@ man 指令: 列出該指令的參數
 $ brew cask install vagrant    --appdir=/Applications
 $ brew cask install virtualbox --appdir=/Applications
 
+使用 Homebrew Cask 移除 boot2docker
+$ brew cask zap boot2docker
+
+使用 Homebrew Cask 機制安裝 Docker
+$ brew cask install dockertoolbox
+
+

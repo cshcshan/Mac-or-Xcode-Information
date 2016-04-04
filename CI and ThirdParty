@@ -1,8 +1,10 @@
 CI and ThirdParty
 
-Homebrew: Package管理工具
-CocoaPods: Package管理工具
-Carthage: Package管理工具
+[Package Manager]
+Homebrew: Mac OS X 的 Package 管理工具
+CocoaPods: Objective-c/Swift 的 Package 管理工具
+Carthage: Objective-c/Swift 的 Package 管理工具
+Alcatraz: Xcode 編譯器的 Package 管理工具
 
 xcodebuild: Xcode提供的build命令，可用於自動daily build
 

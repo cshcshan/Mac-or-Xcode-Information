@@ -69,6 +69,13 @@ man 指令: 列出該指令的參數
 
 ======================================================================
 
+sudo apachectl start    如同開啟10.7以前的網頁共享功能
+sudo apachectl stop     關閉
+sudo apachectl restart  重啟
+預設網站位置: /Library/WebServer/Documents
+
+======================================================================
+
 設定PATH環境變數
 
 1. touch ~/.bash_profile

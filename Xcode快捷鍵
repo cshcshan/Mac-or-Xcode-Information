@@ -40,9 +40,10 @@ command+.   切換顯示自動完成
 
 
 [視窗]
-command + ,    開啟喜好設定 (Preferences)
-command + r      編譯與執行 (Run)
-command + 1    顯示左邊的檔案瀏覽器
+command + ,          開啟喜好設定 (Preferences)
+command + r          編譯與執行 (Run)
+command + 1          顯示左邊的檔案瀏覽器
+command + shift + 1  Welcome to Xcode
 
 自訂的快速鍵
 
@@ -52,5 +53,11 @@ ctrl+l  →    Move Forward
 ctrl+;  End   Move to End of Line
 
 
+[Xib/Storyboard]
+選中一個 UI > option > 滑鼠滑過其他 UI: 標示選中 UI 與其他 UI 的距離
+command + shift + 右鍵選中 UI: 顯示選中的 UI 到根 View 之間的所有 UI
+
+
 資料來源：
-https://disp.cc/b/11-7Mtc 
+https://disp.cc/b/11-7Mtc
+https://onevcat.com/2013/12/code-vs-xib-vs-storyboard/

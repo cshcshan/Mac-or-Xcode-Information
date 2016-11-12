@@ -1,0 +1,39 @@
+若發生Bundle ID重複的錯誤，重新下載 Production 的 Provisioning Profile
+
+ERROR ITMS-4238: "Redundant Binary Upload. There already exists a binary upload with build version '1' for train '1.0.3'" at SoftwareAssets/PreReleaseSoftwareAsset
+=> 將 build + 1
+Version 代表發行版本號，是有三個句號分隔的整數的字串，一般來說，常在iTunes中看到的軟體版號也是這組數字。
+第一個整數代表   重大修改
+第二個整數代表   新增功能
+第三個整數代表   維運更新
+Build 代表內部版本號，比較像是開發者在做記錄用的
+
+ERROR ITMS-90164: "Invalid Code Signing Entitlements. The entitlements in your app bundle signature do not match the ones that are contained in the provisioning profile. According to the provisioning profile, the bundle contains a key value that is not allowed: 'true' for the key 'get-task-allow' in 'Payload/itriut.app/itriut'"
+ERROR ITMS-90046: "Invalid Code Signing Entitlements. Your application bundle's signature contains code signing entitlements that are not supported on iOS. Specifically, value 'development' for key 'aps-environment' in 'Payload/itriut.app/itriut' is not supported."
+=> clean後重新Archive再Upload
+
+ERROR ITMS-90474: "Invalid Bundle. iPad Multitasking support requires these orientations: 'UIInterfaceOrientationPortrait,UIInterfaceOrientationPortraitUpsideDown,UIInterfaceOrientationLandscapeLeft,UIInterfaceOrientationLandscapeRight'. Found 'UIInterfaceOrientationPortrait' in bundle 'com.doit.itriut'."
+=> TARGETS > General > 選擇iPad > 勾選 Requires full screen
+
+WARNING ITMS-90080: "The executable 'Payload/itriut.app/Frameworks/Alamofire.framework' is not a Position Independent Executable. Please ensure that your build settings are configured to create PIE executables. For more information refer to Technical Q&A QA1788 - Building a Position Independent Executable in the iOS Developer Library."
+=> clean後重新Archive再Upload(似乎是iTunes Connect的問題)
+
+ERROR ITMS-90087: "Unsupported Architectures. The executable for itriut.app/Frameworks/DOITKit.framework contains unsupported architectures '[x86_64, i386]'."
+=> General > Embedded Binaries 移除 DOITKit.framework
+
+ERROR ITMS-90635: "Invalid Mach-O Format. The Mach-O in bundle "itriut.app/Frameworks/RealmSwift.framework" isn’t consistent with the Mach-O in the main bundle. The main bundle Mach-O contains armv7(machine code) and arm64(machine code), while the nested bundle Mach-O contains armv7(bitcode) and arm64(bitcode). Verify that all of the targets for a platform have a consistent value for the ENABLE_BITCODE build setting."
+=> Upload to App Store... 時，取消勾選 'Include bitcode.'
+
+ERROR ITMS-90209: "Invalid Segment Alignment. The app binary at 'itriut.app/Frameworks/DOITKit.framework/DOITKit' does not have proper segment alignment. Try rebuilding the app with the latest Xcode version."
+=> ERROR ITMS-90087 解決後就沒再出現
+
+ERROR ITMS-90125: "The binary is invalid. The encryption info in the LC_ENCRYPTION_INFO load command is either missing or invalid, or the binary is already encrypted. This binary does not seem to have been built with Apple's linker."
+=> ERROR ITMS-90087 解決後就沒再出現
+
+ERROR ITMS-90206: "Invalid Bundle. The bundle at 'itriut.app/Frameworks/DOITKit.framework' contains disallowed file 'Frameworks'."
+=> ERROR ITMS-90087 解決後就沒再出現
+
+ERROR ITMS-90474: "Invalid Bundle. iPad Multitasking support requires these orientations: 'UIInterfaceOrientationPortrait,UIInterfaceOrientationPortraitUpsideDown,UIInterfaceOrientationLandscapeLeft,UIInterfaceOrientationLandscapeRight'. Found 'UIInterfaceOrientationPortrait' in bundle 'com.doit.deta-visualization'."
+=> General > Deployment Info > Requires full screen 打勾
+
+

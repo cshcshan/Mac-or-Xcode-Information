@@ -102,4 +102,10 @@ $ brew cask zap boot2docker
 使用 Homebrew Cask 機制安裝 Docker
 $ brew cask install dockertoolbox
 
+======================================================================
+
+設定 Xcode 執行版本
+
+sudo xcode-select -switch /Applications/Xcode_8.1.app/Contents/Developer
+
 

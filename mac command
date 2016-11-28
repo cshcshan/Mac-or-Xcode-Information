@@ -58,8 +58,6 @@ history: 顯示執行過的所有指令
 
 clear: 清除終端機目前內容
 
-open -na Unity: 同時開啟多個Unity
-
 [補充]
 tab鍵可自動補齊指令:
 例如: 輸入cd /U後按下tab鍵，指令會自動補齊為cd /Users
@@ -107,5 +105,12 @@ $ brew cask install dockertoolbox
 設定 Xcode 執行版本
 
 sudo xcode-select -switch /Applications/Xcode_8.1.app/Contents/Developer
+
+======================================================================
+
+同時開啟多個執行程式
+
+open -na Unity: 同時開啟多個Unity
+open -n Simulator.app: 同時開啟多個iOS模擬器(cd /Applications/Xcode_8.1.app/Contents/Developer/Applications)
 
 

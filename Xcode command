@@ -1,0 +1,41 @@
+
+指令位置都放在： /usr/bin
+
+xcrun dwarfdump：dump DWARF debug information.
+
+[xcode-select]
+xcode-select --print-path：目前使用的版本
+sudo xcode-select -switch <path/to/>Xcode.app：變更預設版本
+
+[xcodebuild]
+讓程式透過projects, workspaces進行編譯、測試、分析、打包，可以在一個或多個Target執行程式，或在projects, workspaces包含scheme上
+(以下行為都要先cd到projects, workspaces資料夾底下)
+xcodebuild -list -project {專案名稱}.xcodeproj：列出所有Targets, Build Configurations, Schemes
+xcodebuild -scheme {scheme名稱} build：編譯並執行scheme
+xcodebuild -scheme {scheme名稱} analyze
+xcodebuild -target {target名稱} -xcconfig {configuration}.xcconfig
+xcodebuild test -scheme {scheme名稱} -destination destinationspectifier：執行unit test
+/*
+ destinationspectifier:
+  - On OS X:
+    platform=OS X
+    arch={i386/x86_64}
+  - On iPhone/iPad:
+    platform=OS X
+    name={Window > Devices > Device Information > Name}
+    id={Window > Devices > Device Information > Identifier}
+  - On Simulator:
+    platform=iOS Simulator
+    name={裝置名稱}
+    OS={OS版本}
+ */
+xcodebuild test -scheme {scheme名稱} -destination 'platform=OS X, arch=x86_64'
+xcodebuild test -scheme {scheme名稱} -destination 'platform=iOS,id=998058a1c30d845d0dcec81cd6b901650a0d701c'
+xcodebuild test -scheme {scheme名稱} -destination 'platform=iOS,name=iPod touch'
+xcodebuild test -scheme {scheme名稱} -destination 'platform=iOS Simulator,name=iPad'
+xcodebuild test -scheme {scheme名稱} -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch 64-bit),OS=7.1'
+同時運行模擬器和iPod touch
+xcodebuild test -scheme {scheme名稱} -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch 64-bit),OS=7.1' -destination 'platform=iOS,name=iPod touch'
+
+資料來源：
+http://www.jianshu.com/p/55b80e746e38

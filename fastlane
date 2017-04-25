@@ -1,0 +1,80 @@
+fastlane
+
+[初次設定fastlane]
+1. Open Terminal
+2. 執行 ruby -v：確認ruby版本
+3. 執行 xcode-seletc --install：確認Xcode CLT(Command Line Tools)是否已經安裝
+   執行 xcode-select -p
+4. 執行 sudo gem install -n /usr/local/bin fastlane --verbose：安裝fastlane
+   (更新執行 sudo gem update fastlane)
+
+[專案設定fastlane]
+1. cd到專案目錄
+2. fastlane init
+3. enter the Apple ID and password
+    - 完成後會產生 fastlane 和 build 資料夾
+    - fastlane 底下包含 Appfile, Fastfile, Deliverfile 三個檔案
+       - Appfile, which stores the app identifier and your Apple ID.
+       - Fastfile, which manages the lanes you create to call certain actions.
+       - Deliverfile, which lets you add the required metadata when submitting your app to the app Store.
+/*
+  1. lane, which is a workflow of sequential tasks.
+  2. provision
+  3. produce, which is to create a base app in both iTunes Connect and the Developer Portal with the specified identifier, name, language and version number.
+  4. cert, which is to create a new private key and signing request, download and install the generated certificate and import all generated files in your keychain.
+  5. sigh, which is to generate a provisioning profile.
+ */
+4. fastlane {provision}：執行Fastfile裡的provision lane
+   {provision}是Fastfile檔裡的lane :後面名稱
+
+[Screenshot]
+1. 執行 fastlane snapshot init：產生./fastlane/Snapfile和./fastlane/SnapshotHelper.swift
+2. 編輯./fastlane/Snapfile檔
+    - devices
+    - languages
+    - output_directory：設定輸出資料夾路徑./fastlane/screenshots
+    - clear_previous_screenshots true
+3. 將./fastlane/SnapshotHelper.swift加到UITests Target
+4. 新增UITest檔並編輯程式碼
+    - 刪除setUp()和tearDown()
+    - testExample()加入
+      let app = XCUIApplication()
+      setupSnapshot(app)
+      app.launch()
+      
+      snapshot("loginview") // take a snapshot
+5. 編輯./fastlane/Fastfile檔
+   在error do |lane, exception|:上面加入
+  desc "Take screenshots"
+  lane :screenshot do
+    snapshot
+  end
+6. 執行 fastlane screenshot
+
+[Creating the IPA file]
+1. 編輯./fastlane/Fastfile檔
+  desc "Create ipa"
+  lane :build do
+    increment_build_number
+    gym
+  end
+2. 執行 fastlane build
+
+[Upload to App Store(Seamless Delivery)]
+1. 編輯./fastlane/Fastfile檔
+  desc "Upload to App Store"
+  lane :upload do
+    deliver
+  end
+2. 執行 fastlane upload
+
+[Putting it All Together]
+1. 編輯./fastlane/Fastfile檔
+  desc "Provision, take screenshots, build and upload to App Store"
+  lane :do_everything do
+    provision
+    screenshot
+    build
+    upload
+  end
+2. 執行 fastlane do_everything

@@ -1,0 +1,21 @@
+* 確認是否有公鑰(預設放在user的主目錄下)
+cd ~/.ssh
+ls
+  檢查是否有xxx和xxx.pub，通常是id_rsa和id_rsa.pub或id_dsa和id_dsa.pub
+  (.pub是公鑰，無.pub即為金鑰)
+
+* 建立金鑰
+  ssh-keygen -t rsa -C "(這裡放任何keyword)"
+
+  Enter file in which to save the key (/Users/han/.ssh/id_rsa): 
+  確認公鑰存放位置(Enter即可)
+
+  Enter passphrase (empty for no passphrase): 
+  Enter same passphrase again:
+  輸入並確認公鑰密碼，也可為空 
+
+* 將.pub內容給admin
+  cat ~/.ssh/id_rsa.pub  
+
+
+資料來源：https://git-scm.com/book/zh-tw/v1/伺服器上的-Git-生成-SSH-公開金鑰

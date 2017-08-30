@@ -1,6 +1,10 @@
 mac資料夾結構(底層是Unix系統)
 
-~/		使用者的家目錄 /Users/[UserName]/
+~/      使用者的家目錄 /Users/[UserName]/
+
+/       means the root of the current drive
+./      means the current directory
+../     means the parent of the current directory
 
 /bin	傳統 Unix 命令存放的資料夾，如ls, rm, mv
 /sbin	傳統 Unix 管理類的命令存放的資料夾，如fdisk, ifconfig

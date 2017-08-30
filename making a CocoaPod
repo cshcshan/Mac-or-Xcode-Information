@@ -1,0 +1,54 @@
+### install or update CocoaPods ###
+sudo gem install cocoapods
+
+[GitHub]
+1. Create HCKit repository
+2. Pull HCKit repository
+
+[Terminal]
+1. cd ~/Documents/Swift/Libraries
+2. pod lib create SHCKit
+3. What language do you want to use?? [ Swift / ObjC ]
+   Ans. Swift
+4. Would you like to include a demo application with your library? [ Yes / No ]
+   Ans. Yes
+5. Which testing frameworks will you use? [ Quick / None ]
+   Ans. None
+6. Would you like to do view based testing? [ Yes / No ]
+   Ans. No
+
+[Finder]
+1. Copy files and folders under Documents/Swift/Libraries/SHCKit to HCKit repository folder
+2. Delete Documents/Swift/Libraries/SHCKit folder
+
+[Xcode]
+1. Add swift files in Pods/Development Pods/SHCKit/SHCKit/Classes/
+
+[Source Tree]
+1. Commit
+2. Add a tag which match version in .podspec
+3. Push
+
+[Terminal]
+1. pod lib lint: does not access the network
+2. pod spec lint: checks the external repo and assoicated tag.
+
+- pod repo push SPEC_REPO *.podspec --verbose: 發布po
+
+### Pushing to specs repository ###
+
+pod trunk register csh771355@gmail.com 'Han Chen' --description='Macbook Pro': register a session first
+pod trunk me: display registration information
+
+pod trunk push SHCKit.podspec --verbose
+
+   pod trunk push 執行以下三個工作:
+   1. 驗證本地的podspec文件(如同pod lib lint)
+   2. 上傳podspec到truck
+   3. 將podspec轉乘trunk需要的json文件
+
+### Update and Push to specs repository ###
+1. Update s.version in podspec file
+2. Commit and push to your Git
+3. pod trunk push SHCKit.podspec --verbose
+

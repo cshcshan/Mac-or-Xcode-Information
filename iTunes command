@@ -1,0 +1,14 @@
+iTunes指令
+
+*** 關閉 iTunes ***
+
+## 在 Mac 上把 iPhone 的預設備份位置移動到其他硬碟
+
+ln -s  你要的目標移動位置 /Users/使用者名稱/Library/Application\ Support/MobileSync/Backup/
+
+ln -s /Volumes/HAN\ WDBLACK/iPhone_backup /Users/han/Library/Application\ Support/MobileSync/Backup
+
+或
+
+cd /Users/han/Library/Application\ Support/MobileSync
+ln -s /Volumes/HAN\ WDBLACK/iPhone_backup Backup

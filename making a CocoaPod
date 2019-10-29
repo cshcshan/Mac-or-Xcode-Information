@@ -19,6 +19,9 @@ sudo gem install cocoapods
 
 [Finder]
 1. Copy files and folders under Documents/Swift/Libraries/SHCKit to HCKit repository folder
+   
+   class must be open property
+
 2. Delete Documents/Swift/Libraries/SHCKit folder
 
 [Xcode]
@@ -51,4 +54,15 @@ pod trunk push SHCKit.podspec --verbose
 1. Update s.version in podspec file
 2. Commit and push to your Git
 3. pod trunk push SHCKit.podspec --verbose
+
+### Use Local spec repository
+1. In Podfile, add the content below:
+   pod 'SHCKit', :path => '~/repos/SHCKit'
+
+   the .podspec in ~/repos/SHCKit folder
+
+2. execute pod lib lint --verbose in SHCKit project which contains .podspec file
+
+3. execute pod install in Swift Project
+
 

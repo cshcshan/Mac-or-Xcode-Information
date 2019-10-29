@@ -1,5 +1,0 @@
-Firebase Error
-
-STOP!! Will reset deviceID from memory
-[Solution]
-Project > Capabilities: 啟用 Keychain Sharing(bundle identifier)，Xcode 會自動在.entitlements 增加 Keychain Access Groups

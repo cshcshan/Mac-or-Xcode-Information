@@ -37,5 +37,9 @@ xcodebuild test -scheme {scheme名稱} -destination 'platform=iOS Simulator,name
 同時運行模擬器和iPod touch
 xcodebuild test -scheme {scheme名稱} -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch 64-bit),OS=7.1' -destination 'platform=iOS,name=iPod touch'
 
+[顯示編譯時間]
+defaults write com.apple.dt.Xcode ShowBuildOperationDuration YES
+
 資料來源：
 http://www.jianshu.com/p/55b80e746e38
+https://medium.com/flawless-app-stories/improve-your-xcode-swift-compile-time-d9c1d3786473

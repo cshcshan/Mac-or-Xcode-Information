@@ -4,6 +4,8 @@ iTunes指令
 
 ## 在 Mac 上把 iPhone 的預設備份位置移動到其他硬碟
 
+先刪除 /Users/使用者名稱/Library/Application\ Support/MobileSync 底下的 Backup 資料夾(確保 Backup 底下沒有任何東西)
+
 ln -s  你要的目標移動位置 /Users/使用者名稱/Library/Application\ Support/MobileSync/Backup/
 
 ln -s /Volumes/HAN\ WDBLACK/iPhone_backup /Users/han/Library/Application\ Support/MobileSync/Backup
